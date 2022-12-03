@@ -1,5 +1,4 @@
-import string
-alphabet = string.ascii_letters
+from string import ascii_letters as alphabet
 
 def process(rucksacks):
     priority = ''.join(set(rucksacks[0]).intersection(rucksacks[1]))
