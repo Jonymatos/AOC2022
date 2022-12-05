@@ -14,12 +14,11 @@ def process_inst(inst, cont, same_order = False):
     n_container, from_container, to_container = int(inst[0]), int(inst[1]) - 1, int(inst[2]) - 1
     to_add = cont[from_container][-n_container:]
     cont[from_container] = cont[from_container][:-n_container]
-    if not same_order:
-        to_add.reverse()
-    for crate in to_add:
-        cont[to_container].append(crate)
 
-with open("example.txt", "r") as f:
+    if not same_order: to_add.reverse()
+    for crate in to_add: cont[to_container].append(crate)
+
+with open("input.txt", "r") as f:
     lst = [el.rstrip('\n') for el in f.readlines()]
     parse_containers( list(filter(lambda x: '[' and ']' in x, lst)) )
     lst_moves = list(filter(lambda x: 'move' in x, lst))
