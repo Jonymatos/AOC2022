@@ -4,4 +4,3 @@ with open('input.txt') as f:
         if len(set(buffer[i:i + interval])) == interval:
             print(i + interval)
             break
-    
